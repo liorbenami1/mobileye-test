@@ -11,7 +11,7 @@ pipeline {
 				echo "GIT_PREVIOUS_SUCCESSFUL_COMMIT = $GIT_PREVIOUS_SUCCESSFUL_COMMIT"
 				echo "GIT_URL = $GIT_URL"
 				payload = curl https://api.github.com/repos/liorbenami1/mobileye-test/hooks?access_token=164d263898075c540eeef8741a4fcd691e97fcfa
-				echo "payload = $paylaod
+				echo "payload = $paylaod"
 			}
 		}
 	}

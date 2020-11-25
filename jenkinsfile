@@ -10,8 +10,13 @@ pipeline {
 				echo "GIT_PREVIOUS_COMMIT = $GIT_PREVIOUS_COMMIT"
 				echo "GIT_PREVIOUS_SUCCESSFUL_COMMIT = $GIT_PREVIOUS_SUCCESSFUL_COMMIT"
 				echo "GIT_URL = $GIT_URL"
-				payload = "curl https://api.github.com/repos/liorbenami1/mobileye-test/hooks?access_token=164d263898075c540eeef8741a4fcd691e97fcfa"
-				echo "payload = $paylaod"
+				try {
+    					// Fails with non-zero exit if dir1 does not exist
+    					def payload = sh(script:'curl https://api.github.com/repos/liorbenami1/mobileye-test/hooks?access_token=164d263898075c540eeef8741a4fcd691e97fcfa', returnStdout:true).trim()
+					echo "payload = $paylaod"
+				} catch (Exception ex) {
+    					println("Unable to read paylaod: ${ex}")
+				}
 			}
 		}
 	}

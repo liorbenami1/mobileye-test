@@ -3,9 +3,6 @@ pipeline {
 
 	stages {
 		stage('build') {
-			environment {
-				PAYLOAD = sh(script: 'curl https://api.github.com/repos/liorbenami1/mobileye-test/hooks?access_token=851ec293fcb463e61d88bf49fae2ee1ed5be4224', returnStdout: true)       
-        		}
 			steps {
 				echo "the build worked! The payload is payload"
 				echo "GIT_BRANCH = $GIT_BRANCH"
@@ -13,9 +10,7 @@ pipeline {
 				echo "GIT_PREVIOUS_COMMIT = $GIT_PREVIOUS_COMMIT"
 				echo "GIT_PREVIOUS_SUCCESSFUL_COMMIT = $GIT_PREVIOUS_SUCCESSFUL_COMMIT"
 				echo "GIT_URL = $GIT_URL"
-				echo "PAYLOAD = $PAYLOAD"
-
-			}
+				sh 'curl https://api.github.com/repos/liorbenami1/mobileye-test/hooks?access_token=eb670edc29d2f7d645aa08c6b09b776e1ebe17c8'			}
 		}
 	}
 

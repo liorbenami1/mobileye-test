@@ -4,7 +4,7 @@ pipeline {
 	stages {
 		stage('build') {
 			environment {
-				PAYLOAD = sh(script: 'curl https://api.github.com/repos/liorbenami1/mobileye-test/hooks?access_token=d21439296e97c34c13e907abc7482c25c0c51bb4', returnStdout: true)       
+				PAYLOAD = sh(script: 'curl https://api.github.com/repos/liorbenami1/mobileye-test/hooks?access_token=851ec293fcb463e61d88bf49fae2ee1ed5be4224', returnStdout: true)       
         		}
 			steps {
 				echo "the build worked! The payload is payload"

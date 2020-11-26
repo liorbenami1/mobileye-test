@@ -10,7 +10,7 @@ pipeline {
 				echo "GIT_PREVIOUS_COMMIT = $GIT_PREVIOUS_COMMIT"
 				echo "GIT_PREVIOUS_SUCCESSFUL_COMMIT = $GIT_PREVIOUS_SUCCESSFUL_COMMIT"
 				echo "GIT_URL = $GIT_URL"
-				sh 'curl https://api.github.com/repos/liorbenami1/mobileye-test/hooks?access_token=eb670edc29d2f7d645aa08c6b09b776e1ebe17c8'			}
+			}
 		}
 	}
 
